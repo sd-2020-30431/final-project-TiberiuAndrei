@@ -1,0 +1,77 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background: url("./Images/LogInImg.jpg");
+    background-size: cover;
+    font-family: sans-serif;
+    color: white;
+}
+
+.align_center {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.width {
+    width: 320px;
+}
+
+.loginbox {
+    width: 360px;
+    height: 370px;
+    background-color: rgba(0,0,0,0.8);
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.avatarbox {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 50px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.avatarbg {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 70px;
+    background: red;
+    padding: 0px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.avatarbox img {
+    width: 100%;
+}
+
+.mybtn {
+    color: #fff;
+    background-color: red;
+    border-color: black;
+}
+
+.error {
+    color: red;
+}
+
+.error_fog {
+    width: 50px;
+    height: 10px;
+    background-color: rgba(0,0,0,0.8);
+}

@@ -1,0 +1,56 @@
+﻿@model BankingApp.Models.User
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+
+<div class="loginbox"></div>
+
+<div class="align_center">
+    <div class="row">
+        <div class="col-md-4">
+            <br><br><br><br><br>
+            <form asp-action="Index">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="width">
+                    <div class="form-group">
+                        <label asp-for="Username" class="control-label"></label>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" type="password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="LogIn" class="btn mybtn" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="avatarbg"></div>
+    <div class="avatarbox">
+        <img src="~/css/Images/avatar.png">
+    </div>
+
+    <div class="error">
+        @ViewData["message"]
+    </div>
+
+    @*<div>
+            <a asp-action="Index">Back to List</a>
+        </div>*@
+
+
+
+</div>

@@ -1,0 +1,109 @@
+﻿@model BankingApp.Models.UserData
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/mainPage.css" />
+
+Username: @Model.User.Username
+<br>
+Amount RON: @Model.AccountRon.Amount
+<br>
+Amount EUR: @Model.AccountEur.Amount
+
+
+
+
+<form asp-controller="MainPage" asp-action="IndexPostRon">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="width">
+        <div class="form-group">
+            <p>Please enter the amount to be transfered in RON</p>
+            <input asp-for="TransferRon" class="form-control" />
+            <span asp-validation-for="TransferRon" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <p>Please enter the account in which you want to transfer RON</p>
+            <input asp-for="TargetRon" class="form-control" />
+            <span asp-validation-for="TargetRon" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Transfer" class="btn mybtn" />
+    </div>
+</form>
+
+<form asp-controller="MainPage" asp-action="IndexPostEur">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="width">
+        <div class="form-group">
+            <p>Please enter the amount to be transfered in EUR</p>
+            <input asp-for="TransferEur" class="form-control" />
+            <span asp-validation-for="TransferEur" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <p>Please enter the account in which you want to transfer EUR</p>
+            <input asp-for="TargetEur" class="form-control" />
+            <span asp-validation-for="TargetEur" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Transfer" class="btn mybtn" />
+    </div>
+</form>
+
+<form asp-controller="MainPage" asp-action="ConvertRon">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="width">
+        <div class="form-group">
+            <p>Transfer from your RON account to EUR account</p>
+            <p>Please enter the amount you wish to convert</p>
+            <input asp-for="TransferRon" class="form-control" />
+            <span asp-validation-for="TransferRon" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Transfer" class="btn mybtn" />
+    </div>
+</form>
+
+<form asp-controller="MainPage" asp-action="ConvertEur">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="width">
+        <div class="form-group">
+            <p>Transfer from your EUR account to RON account</p>
+            <p>Please enter the amount you wish to convert</p>
+            <input asp-for="TransferEur" class="form-control" />
+            <span asp-validation-for="TransferEur" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Transfer" class="btn mybtn" />
+    </div>
+</form>
+
+<form asp-controller="MainPage" asp-action="RequestLoan">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="width">
+        <div class="form-group">
+            <p>Please enter the amount you need in RON</p>
+            <input asp-for="LoanAmount" class="form-control" />
+            <span asp-validation-for="LoanAmount" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Request" class="btn mybtn" />
+    </div>
+</form>
+
+<a asp-controller="MainPage" asp-action="ViewTransactions"> View Transactrtions </a>
+
+<div class="error">
+    @ViewData["message"]
+</div>
+<div class="success">
+    @ViewData["successMessage"]
+</div>
